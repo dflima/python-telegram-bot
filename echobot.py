@@ -1,8 +1,9 @@
+import config
 import json
 import requests
 import time
 
-TOKEN = "447507093:AAG4LBDR17C34zjTSB1B2BDtCBHbdbWrFuQ"
+TOKEN = config.token
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
 
 def get_url(url):
