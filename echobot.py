@@ -39,6 +39,15 @@ def send_message(text, chat_id):
     url = URL + "sendMessage?text={}&chat_id={}".format(text, chat_id)
     get_url(url)
 
+def echo_all(updates):
+    for update in updates["result"]:
+        try:
+            text = update["message"]["text"]
+            chat = update["message"]["chat"]["id"]
+            send_message(text, chat)
+        except Exception as e:
+            print(e)
+
 def main():
     last_textchat = (None, None)
     while True:
